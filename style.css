@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+@property --rotates {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes animaterotate {
+  form {
+    --rotates: 0deg;
+  }
+  to {
+    --rotates: 360deg;
+  }
+}
+.parent {
+  padding: 10px;
+  background-color: #e9c4ae;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  max-width: 420px;
+  gap: 1rem;
+  box-shadow: 0px 0px 20px 20px #995b43;
+  background: linear-gradient(black) padding-box,
+    conic-gradient(from var(--rotates), black, black, #d09f77) border-box;
+  align-items: center;
+  border: 0px solid rgba(0, 0, 0, 0);
+  animation: animaterotate 5s linear infinite;
+  animation-play-state: paused;
+  transition:all 0.5s ease-in;
+}
+
+.parent:hover {
+  animation-play-state: running;
+  border-width: 5px;
+}
+.image {
+  border-radius: 10px;
+}
+.text-wrapper {
+  color: #debe9e;
+  letter-spacing: 1.5px;
+  line-height: 22px;
+  font-weight: bold;
+
+  /* -ms-perspective-origin-y: 100rem; */
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
